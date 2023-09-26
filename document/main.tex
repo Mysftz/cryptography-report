@@ -1,0 +1,175 @@
+\documentclass[12pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{dsfont}
+\usepackage{amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[margin=2.5cm,a4paper]{geometry}
+\usepackage{listings}
+\usepackage{minted}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{cite}
+\usepackage{cleveref}
+\usepackage{siunitx}
+\setlength{\parindent}{0pt}
+\newcommand{\deriv}{\mathrm{d}}
+\usepackage{color}  
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, 
+    linktoc=all,    
+    linkcolor=black, 
+    citecolor=black,
+}
+\lstset{
+    language=R,
+    basicstyle=\scriptsize\ttfamily,
+    commentstyle=\ttfamily\color{red},
+    numbers=left,
+    numberstyle=\ttfamily\color{blue}\footnotesize,
+    stepnumber=1,
+    numbersep=5pt,
+    backgroundcolor=\color{white},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    frame=single,
+    tabsize=2,
+    captionpos=b,
+    breaklines=true,
+    breakatwhitespace=false,
+    title=\lstname,
+    escapeinside={},
+    keywordstyle={},
+    morekeywords={}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{PH370 Computing}
+\lhead{C4 - Cryptography Assignment}
+\rfoot{-\thepage\centering-}
+
+\begin{document}
+\begin{titlepage}
+
+\newgeometry{left=1.5in,right=1.5in,top=2.5in,bottom=2.5in}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\begin{centering} 
+ 
+%------------------------------------------------------------------------
+%	HEADING SECTIONS
+%------------------------------------------------------------------------
+
+\includegraphics[scale=0.4]{Uni_of_Kent_Logo.png}\\[1cm]
+
+%------------------------------------------------------------------------
+%	TITLE SECTION
+%------------------------------------------------------------------------
+
+\HRule \\[0.4cm]
+\textsc{\large Astronomy, Space Science and Astrophysics}\\[0.4cm]
+{\huge \bfseries Cryptography Assignment}\\[0.4cm]
+\HRule \\[1.0cm]
+
+%------------------------------------------------------------------------
+%	DATE SECTION
+%------------------------------------------------------------------------
+
+\textsc{\Large Stage 1 - PH370 Computing}\\[0.5cm] 
+{\large Monday 19th March 2018}\\[1.0cm]
+
+%------------------------------------------------------------------------
+%	AUTHOR SECTION
+%------------------------------------------------------------------------
+
+\begin{minipage}{0.625\textwidth}
+\centering
+
+\emph{\large Report Author:} \large Lukasz R Tomaszewski \\ [0.2cm]
+\end{minipage}\\[2cm]
+
+\vfill
+\end{centering} 
+\end{titlepage}
+
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+%	CONTENTS  
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+
+\newpage
+\begin{titlepage}
+\begin{tableofcontents}
+
+\end{tableofcontents}
+\end{titlepage}
+
+%-----------------------------------------------------------------------
+%-----------------------------------------------------------------------
+%	PYTHON SCRIPT
+%-----------------------------------------------------------------------
+%-----------------------------------------------------------------------
+
+\section{Python Script}
+\label{Python Script Section}
+
+\inputminted[breaklines,linenos,bgcolor=AliceBlue]{python3}{Encryption.py}
+
+%-----------------------------------------------------------------------
+%-----------------------------------------------------------------------
+%	PLAINTEXT
+%-----------------------------------------------------------------------
+%-----------------------------------------------------------------------
+
+\section{Plaintext}
+\label{Plaintext Section}
+
+%-----------------------------------------------------------------------
+%	ENCRYPTION
+%-----------------------------------------------------------------------
+
+\subsection{Encrypted}
+\label{Encrypted SubSection}
+
+\inputminted[breaklines,linenos,bgcolor=AliceBlue]{python3}{plaintext.txt.enc.txt}
+
+%-----------------------------------------------------------------------
+%	DECRYPTION
+%-----------------------------------------------------------------------
+
+\subsection{Decrypted}
+\label{Decrypted SubSection}
+
+\inputminted[breaklines,linenos,bgcolor=AliceBlue]{python3}{plaintext.txt.enc.dec.txt}
+
+%-----------------------------------------------------------------------
+%-----------------------------------------------------------------------
+%	DECODING SCRIPT
+%-----------------------------------------------------------------------
+%-----------------------------------------------------------------------
+
+\section{Secret}
+\label{Secret Section}
+
+\inputminted[breaklines,linenos,bgcolor=AliceBlue]{python3}{secret.txt.dec.txt}
+
+%------------------------------------------------------------------------
+
+\pagebreak
+\section{LaTeX Script}
+\label{LaTeX Script Section}
+\inputminted[breaklines]{tex}{main.tex}
+
+%------------------------------------------------------------------------
+%	REFERENCES
+%------------------------------------------------------------------------
+
+\end{document}
